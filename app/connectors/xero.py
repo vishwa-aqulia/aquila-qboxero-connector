@@ -12,7 +12,7 @@ def build_auth_url(state: str) -> str:
         "response_type": "code",
         "client_id": XERO_CLIENT_ID,
         "redirect_uri": XERO_REDIRECT_URI,
-        "scope": "offline_access openid profile email accounting.read",
+        "scope": "offline_access openid profile email accounting.transactions.read accounting.reports.read accounting.settings.read accounting.contacts.read accounting.attachments.read accounting.budgets.read",
         "state": state,
     }
     return f"{XERO_AUTH_URL}?{urlencode(params)}"
